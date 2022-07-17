@@ -1,18 +1,39 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-type density struct{
-	marble float64
-	wood float64
-	plastic float64
-}
+const (dWood = 1.5
+	dMarble = 2.52
+	dPlastic = 0.9)
 
-type table struct{
+type cube struct{
 	length float64
 	width float64
 	thickness float64 
-	density
+	density float64
+}
+func (c cube) weight()float64{
+	return c.length * c.thickness * c.width * c.density
+}
+
+type sphere struct{
+	radius float64
+	density float64
+}
+func (s sphere) weight() float64{
+	return 3/4 * math.Pi * s.radius * s.radius * s.radius
+}
+
+type composed struct{
+	shape []shape
+}
+func (co composed) weight() float64{
+	shape := 
+	
+	return 
 }
 
 func main(){
@@ -34,17 +55,17 @@ func main(){
 		fmt.Println(i+1, v)
 	}
 	fmt.Scanln(&m)
+	var 
+	//total := table{length: l, width: w, thickness: t, density: density {2.52, 1.5, 0.9} }
 
-	total := table{length: l, width: w, thickness: t, density: density {2.52, 1.5, 0.9} }
-
-	//fmt.Println(total.volume(l, w, t))
-	total.volume(l, w, t, m)
-	//marble: 2.52, wood: 1.5, plastic: 0.9
+	table.volume(l, w, t)
+	
 	
 	
 
 }
 
-func (t table) volume(float64, float64, float64, float64)float64{
-	return t.length * t.width * t.thickness * density
+func (t table) volume(float64, float64, float64){
+	v := t.length * t.width * t.thickness
+	fmt.Sprintln(v)
 }
