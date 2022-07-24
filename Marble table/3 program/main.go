@@ -47,7 +47,7 @@ func (co composed) weight() float64{
 
 func main(){
 	
-	fmt.Println(sphere.weight(5.5))
+	//fmt.Println(sphere.weight())
 
 	fmt.Println("What is the shape of the table?")
 	sliceShapes := []string {"cube", "sphere", "composed"}
