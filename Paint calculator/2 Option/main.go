@@ -6,11 +6,22 @@ package main
 import "fmt"
 
 func main(){
-	paintNeeded(4.2, 3.0)
-	paintNeeded(5.2, 3.5)
+	var amount, total float64
+
+	amount = paintNeeded(4.2, 3.0)
+	fmt.Printf("%.2f l needed\n", amount)
+
+	total += amount
+
+	amount = paintNeeded(5.2, 3.5)
+	fmt.Printf("%.2f l needed\n", amount)
+
+	total += amount
+	fmt.Printf("Total: %.2f l needed", total)
+
 }
 func paintNeeded(w, l float64)float64{
-	area := w * l	
-	fmt.Printf("%.2f liters needed\n", area/10)
+
+	return w * l /10	
 
 }
