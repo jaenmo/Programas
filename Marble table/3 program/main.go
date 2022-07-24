@@ -37,18 +37,20 @@ type composed struct{
 }
 
 func (co composed) weight() float64{
+	var total float64
 	shapes := []shape {cube{}, sphere{}}
 	for _, v := range shapes{
-		co.weight() = shape.weight()
+		total += v.weight()
 	}
-	return co.weight()
+	return total
 }
 
 func main(){
 	
-	
+	fmt.Println(sphere.weight(5.5))
+
 	fmt.Println("What is the shape of the table?")
-	sliceShapes := []string {cube, sphere, composed}
+	sliceShapes := []string {"cube", "sphere", "composed"}
 	for i, v := range sliceShapes {
 		fmt.Println(i+1, v)
 	}
@@ -61,7 +63,7 @@ func main(){
 	chooseMaterial()
 	var mat int
 	fmt.Scanln(&mat)
-	fmt.Println(cube.weight)
+	fmt.Printf("%v", cube.weight)
 
 	}else if table == 2{
 		
@@ -77,6 +79,8 @@ func main(){
 		chooseMaterial()
 		var mat int
 		fmt.Scanln(&mat)
+	}else {
+		fmt.Println("wrong number")
 	}
 
 
