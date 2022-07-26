@@ -26,20 +26,10 @@ func main(){
 	total += amount
 	fmt.Printf("Total: %.2f l needed\n", total)
 
-	// myInt := 3
-	// myBool := false
-	// myString := "bye"
-	// myInt, myBool, myString := manyReturns()
-	fmt.Println(manyReturns())
-
 }
 func paintNeeded(w, l float64)(float64){
 
 	return w * l /10
  
 
-}
-
-func manyReturns() (int, bool, string){
-	return 1, true, "hola"
 }
